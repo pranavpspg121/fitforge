@@ -247,7 +247,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="image\ChatGPT Image Nov 27, 2025, 11_12_00 PM.png" alt="logo" width="44" height="44" style="object-fit:cover; border-radius:8px; margin-right:10px;">
+        <img src="image/ChatGPT Image Nov 27, 2025, 11_12_00 PM.png" alt="logo" width="44" height="44" style="object-fit:cover; border-radius:8px; margin-right:10px;">
         Fit Forge
       </a>
 
@@ -330,11 +330,11 @@
       <div class="gallery">
         <!-- Unsplash images — replace with local /new/ files if desired -->
         <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9d742a8c5b1b3b7bb0b2b6a6f4e9db7d" alt="Weightlifting">
-        <img src="\websiteforgym\image\barbell.jpg" alt="Kettlebell training">
-        <img src="\websiteforgym\image\kettle.jpg" alt="Barbell">
-        <img src="\websiteforgym\image\squat.webp" alt="Squat rack">
+        <img src="/image/barbell.jpg" alt="Kettlebell training">
+        <img src="/image/kettle.jpg" alt="Barbell">
+        <img src="/image/squat.webp" alt="Squat rack">
         <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7e248c2fb2d3b6e6b5a9f3c7d6a1b2c3" alt="Training session">
-        <img src="\websiteforgym\image\rowing-machine-workouts.jpg" alt="Row machine">
+        <img src="/image/rowing-machine-workouts.jpg" alt="Row machine">
       </div>
     </div>
   </section>
@@ -531,15 +531,15 @@
       // Simple gallery click -> modal preview (Bootstrap modal)
       $('.gallery img').on('click', function(){
         var src = $(this).attr('src');
-        var modalHtml = '\
-        <div class="modal fade" id="imgModal" tabindex="-1">\
-          <div class="modal-dialog modal-dialog-centered modal-lg">\
-            <div class="modal-content bg-transparent border-0">\
-              <div class="modal-body p-0 text-center">\
-                <img src="'+src+'" alt="preview" style="width:100%; height:auto; border-radius:12px;">\
-              </div>\
-            </div>\
-          </div>\
+        var modalHtml = '/
+        <div class="modal fade" id="imgModal" tabindex="-1">/
+          <div class="modal-dialog modal-dialog-centered modal-lg">/
+            <div class="modal-content bg-transparent border-0">/
+              <div class="modal-body p-0 text-center">/
+                <img src="'+src+'" alt="preview" style="width:100%; height:auto; border-radius:12px;">/
+              </div>/
+            </div>/
+          </div>/
         </div>';
         $('body').append(modalHtml);
         var $m = new bootstrap.Modal(document.getElementById('imgModal'));
