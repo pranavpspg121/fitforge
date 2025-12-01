@@ -1,0 +1,226 @@
+:root{
+      --bg: #0b0b0b;
+      --card: #0f0f10;
+      --accent: #e63946; /* bold red */
+      --muted: #bdbdbd;
+      --glass: rgba(255,255,255,0.04);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Roboto', Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+      padding: .6rem 1rem;
+    }
+    .navbar-brand { font-weight:900; letter-spacing: 1px; color: #fff; }
+    .nav-link { color: #ddd !important; }
+    .btn-cta {
+      background: var(--accent);
+      color: #fff;
+      border-radius: .35rem;
+      padding: .35rem .9rem;
+      font-weight:700;
+      box-shadow: 0 6px 18px rgba(230,57,70,0.12);
+    }
+    .btn-ghost {
+      border: 2px solid #fff;
+      color: #fff;
+      background: transparent;
+      padding: .25rem .8rem;
+      border-radius: .35rem;
+    }
+
+    /* Hero */
+    .hero {
+      background-image: linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1549576490-b0b4831ef60a?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7d8b3f4f9d2f7944b7c8d6e6b9f3e2a5');
+      background-size: cover;
+      background-position: center;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero .content {
+      max-width: 900px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.35));
+      padding: 2.6rem;
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 68px);
+      margin: 0 0 .4rem;
+      font-weight:900;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .hero p.lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Sections */
+    section { padding: 60px 0; }
+    .section-title { color: #fff; font-weight:800; margin-bottom: .75rem; }
+    .muted { color: var(--muted); }
+
+    /* Services */
+    .service-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .service-card h5 { font-weight:800; }
+    .service-icon {
+      width:58px;height:58px;border-radius:10px;
+      display:inline-flex;align-items:center;justify-content:center;
+      margin-bottom:.75rem;background:var(--glass);
+      font-weight:800;color:#fff;font-size:1.2rem;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform .25s, box-shadow .25s;
+      opacity: .95;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .gallery img:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.6); }
+
+    /* Reviews */
+    .review {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Footer & contact CTA */
+    footer {
+      background: #050505;
+      color: var(--muted);
+      padding: 22px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .floating-contact {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+    }
+    .floating-contact a {
+      display:inline-flex;align-items:center;gap:10px;
+      background: var(--accent); color: #fff; padding: 12px 14px; border-radius: 50px;
+      box-shadow: 0 12px 30px rgba(230,57,70,0.18);
+      text-decoration: none; font-weight:700;
+    }
+
+    /* Small screens tweaks */
+    @media (max-width: 576px){
+      .hero { min-height: 560px; padding: 2.2rem 1rem; }
+      .gallery img { height:160px; }
+    }
+
+
+
+    /*  */
+
+    /*  */
+
+    /* === ANIMATIONS (add to head/style) === */
+
+/* Hero title reveal */
+@keyframes slideUpFade {
+  0% { transform: translateY(24px); opacity: 0; filter: blur(6px); }
+  60% { transform: translateY(-6px); opacity: 1; filter: blur(0); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.hero h1.animated {
+  animation: slideUpFade 900ms cubic-bezier(.22,.9,.37,1) both;
+  will-change: transform, opacity;
+}
+
+/* Hero subtitle slight fade */
+.hero p.lead.animated {
+  animation: slideUpFade 1100ms cubic-bezier(.22,.9,.37,1) both;
+  animation-delay: 180ms;
+}
+
+/* CTA pulse (idle) and stronger on hover */
+@keyframes slowPulse {
+  0% { transform: scale(1); box-shadow: 0 6px 18px rgba(230,57,70,0.12); }
+  50% { transform: scale(1.02); box-shadow: 0 10px 28px rgba(230,57,70,0.14); }
+  100% { transform: scale(1); box-shadow: 0 6px 18px rgba(230,57,70,0.12); }
+}
+.btn-cta.pulse {
+  animation: slowPulse 3.5s ease-in-out infinite;
+}
+
+.btn-cta:hover {
+  transform: scale(1.04);
+  transition: transform 160ms ease;
+  box-shadow: 0 18px 44px rgba(230,57,70,0.2);
+}
+
+/* Gallery stagger fade-in */
+@keyframes fadeInUp {
+  0% { transform: translateY(18px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.gallery img.animated {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeInUp 600ms ease forwards;
+}
+
+/* Floating contact bounce */
+@keyframes bounceFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+.floating-contact a {
+  animation: bounceFloat 3.2s ease-in-out infinite;
+}
+
+/* Navbar shrinked state on scroll */
+.navbar.shrink {
+  padding: 0.25rem 1rem !important;
+  transition: padding 200ms ease, box-shadow 220ms ease, background 220ms;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+}
+
+/* small tweak so animated elements are smooth on mobile */
+@media (prefers-reduced-motion: reduce) {
+  .hero h1.animated,
+  .hero p.lead.animated,
+  .btn-cta.pulse,
+  .gallery img.animated,
+  .floating-contact a {
+    animation: none !important;
+  }
+}
