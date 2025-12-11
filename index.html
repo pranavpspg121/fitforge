@@ -6,20 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fit Forge — Strength Starts Here</title>
 
+  <!-- socal media icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fonts: The example assumes your site already loads a bold heading font (e.g., Poppins / Inter). If not, add in <head>: -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+
+
+
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
- 
-<link rel="stylesheet" href="styles.css">
- 
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="image\ChatGPT Image Nov 27, 2025, 11_12_00 PM.png" alt="logo" width="44" height="44" style="object-fit:cover; border-radius:8px; margin-right:10px;">
+        <!-- use forward slashes for local paths -->
+        <img src="image/ChatGPT Image Dec 4, 2025, 02_36_19 PM.png" alt="logo" width="44" height="44"
+             style="object-fit:cover; border-radius:8px; margin-right:10px;">
         Fit Forge
       </a>
 
@@ -28,68 +35,234 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center pl-lg-0 text-end">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Programs</a></li>
           <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item ms-3"><a class="btn btn-ghost" href="loginpage.html">Join</a></li>
-          <li class="nav-item ms-2"><a class="btn btn-cta" href="#join">Book Trial</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trainers">trainers</a></li>
+          <li class="nav-item "><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-3"><a class="btn btn-outline-light btn-ghost" href="loginpage.html">Join</a></li>
+          <li class="nav-item ms-2 pt-1 pt-lg-0"><a class="btn btn-outline-danger btn-cta pulse" href="#join">Book Trial</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header id="home" class="hero">
-    <div class="content text-center">
-      <h1>FIT FORGE</h1>
-      <p class="lead">Strength. Skill. Stamina. Join the forge where men's fitness is sharpened — small-group coaching, free weights, and performance programming.</p>
+  
 
-      <div class="d-flex justify-content-center gap-3 flex-wrap">
-        <a href="#join" class="btn btn-cta btn-lg">Book Free Trial</a>
-        <a href="#services" class="btn btn-outline-light btn-lg">Our Programs</a>
+  <!-- Bootstrap Carousel as 3 background layers -->
+<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+<!-- indicators -->
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</div>
+
+
+<div  id="home" class="carousel-inner">
+<div class="carousel-item active" style="background-image:url('/image/photo-1549576490-b0b4831ef60a.jpg')" aria-label="Slide 1 background">
+<div class="hero-content text-center">
+<h1>FIT FORGE</h1>
+<p class="lead">Strength. Skill. Stamina. Join the forge where men's fitness is sharpened — small-group coaching, free weights, and performance programming.</p>
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+<a href="#join" class="btn btn-danger btn-lg fw-bold ">Book Free Trial</a>
+<a href="#services" class="btn btn-outline-light btn-lg fw-bold">Our Programs</a>
+</div>
+<p class="mt-3" style="color:var(--muted);margin-top:.9rem">Open weekdays 5:30AM — 11:00PM · Located centrally</p>
+</div>
+</div>
+
+
+<div class="carousel-item" style="background-image:url('/image/rowing-machine-workouts.jpg')" aria-label="Slide 2 background">
+<div class="hero-content text-center">
+<h1>FIT FORGE</h1>
+<p class="lead">Train smarter — programming & coaching tailored for progress. Small groups, big results.</p>
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+<a href="#join" class="btn btn-danger btn-lg fw-bold ">Book Free Trial</a>
+<a href="#services" class="btn btn-light btn-lg fw-bold">Our Programs</a>
+</div>
+<p class="mt-3" style="color:var(--muted);margin-top:.9rem">Open weekdays 5:30AM — 11:00PM · Located centrally</p>
+</div>
+</div>
+
+
+<div class="carousel-item" style="background-image:url('/image/barbell.jpg')" aria-label="Slide 3 background">
+<div class="hero-content text-center">
+<h1>FIT FORGE</h1>
+<p class="lead">Performance-focused coaching, community energy, and the equipment to build your best physique.</p>
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+<a href="#join" class="btn  btn-outline-danger btn-lg fw-bold ">Book Free Trial</a>
+<a href="#services" class="btn btn-outline-light btn-lg fw-bold">Our Programs</a>
+</div>
+<p class="mt-3" style="color:var(--muted);margin-top:.9rem">Open weekdays 5:30AM — 11:00PM · Located centrally</p>
+</div>
+</div>
+</div>
+
+
+<!-- controls -->
+<button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous slide">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next slide">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+</button>
+</div>
+
+  <!-- about -->
+  
+
+   
+   <section id="about-hero" class="about-hero"><br>
+    <h2 id="about" class="section-title">About Us</h2>
+  <div class="wrap">
+    <div class="about-left">
+      
+      <small class="eyebrow">WHO WE ARE</small>
+      <h1 class="about-title">We create a new <br>approach to sport</h1>
+      <p class="about-lead">
+        Science-based coaching, modern equipment and a community that pushes you.
+        We build strength, endurance and confidence with smart programming and real accountability.
+      </p>
+
+      <div class="contact-bubble" aria-hidden="false">
+        <span class="bubble-icon">✉️</span>
+        <div class="bubble-text">
+          <div class="small">Contact</div>
+          <a href="mailto:info@fitforge.com">info@fitforge.com</a>
+        </div>
       </div>
-      <p class="mt-3 muted">Open weekdays 5:30AM — 11:00PM · Located centrally</p>
     </div>
-  </header>
 
-  <!-- PROGRAMS / SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="text-center mb-4">
-        <h2 class="section-title">Programs Built For Results</h2>
-        <p class="muted">Choose strength, hypertrophy, conditioning, or personalized coaching — real training with real progress.</p>
+    <aside class="about-right" aria-label="Skills & programs strengths">
+      <div class="skill">
+        <div class="skill-head">
+          <span>Crossfit</span><strong class="percent">96%</strong>
+        </div>
+        <div class="bar" data-value="96">
+          <div class="bar-fill" style="width:0%"></div>
+        </div>
       </div>
 
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="service-card h-100 text-center">
-            <div class="service-icon mx-auto mb-2">🏋️‍♂️</div>
-            <h5>Strength Training</h5>
-            <p class="muted small">Barbell-based progression, programming to build raw strength and technique.</p>
-          </div>
+      <div class="skill">
+        <div class="skill-head">
+          <span>Cardio</span><strong class="percent">94%</strong>
         </div>
-
-        <div class="col-md-4">
-          <div class="service-card h-100 text-center">
-            <div class="service-icon mx-auto mb-2">🔥</div>
-            <h5>High-Intensity Conditioning</h5>
-            <p class="muted small">Short, powerful metabolic sessions to increase conditioning without sacrificing size.</p>
-          </div>
+        <div class="bar" data-value="94">
+          <div class="bar-fill" style="width:0%"></div>
         </div>
+      </div>
 
-        <div class="col-md-4">
-          <div class="service-card h-100 text-center">
-            <div class="service-icon mx-auto mb-2">🧭</div>
-            <h5>Personal Coaching</h5>
-            <p class="muted small">1:1 coaching, goal planning, nutrition guidance, and weekly check-ins.</p>
-          </div>
+      <div class="skill">
+        <div class="skill-head">
+          <span>Yoga</span><strong class="percent">90%</strong>
+        </div>
+        <div class="bar" data-value="90">
+          <div class="bar-fill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-head">
+          <span>Strength</span><strong class="percent">92%</strong>
+        </div>
+        <div class="bar" data-value="92">
+          <div class="bar-fill" style="width:0%"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+<!-- search function -->
+
+<div class="service-search-box">
+    <input 
+        type="text" 
+        id="serviceSearch" 
+        placeholder="Search services (Strength, Cardio, Yoga...)">
+</div>
+<div class="services-grid" id="servicesList">
+    <!-- your service cards -->
+     <!-- PROGRAMS / SERVICES -->
+  <!-- fix: id should be "services" and "zin" should be a class -->
+ <section id="services" class="zin">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Our Services & Programs Built For Results</h2>
+      <p class="muted">Choose strength, hypertrophy, conditioning, or personalized coaching — real training with real progress.</p>
+    </div>
+
+    <div class="row g-3">
+      <!-- Strength Training -->
+      <div class="col-md-4">
+        <div class="service-card h-100 text-center">
+          <div class="service-icon mx-auto mb-2">🏋️‍♂️</div>
+          <h5>Strength Training</h5>
+          <p class="muted small">Barbell-based progression, programming to build raw strength and technique.</p>
+        </div>
+      </div>
+
+      <!-- High-Intensity Conditioning -->
+      <div class="col-md-4">
+        <div class="service-card h-100 text-center">
+          <div class="service-icon mx-auto mb-2">🔥</div>
+          <h5>High-Intensity Conditioning</h5>
+          <p class="muted small">Short, powerful metabolic sessions to increase conditioning without sacrificing size.</p>
+        </div>
+      </div>
+
+      <!-- Personal Coaching -->
+      <div class="col-md-4">
+        <div class="service-card h-100 text-center">
+          <div class="service-icon mx-auto mb-2">🧭</div>
+          <h5>Personal Coaching</h5>
+          <p class="muted small">1:1 coaching, goal planning, nutrition guidance, and weekly check-ins.</p>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- NEW ROW -->
+    <div class="row g-3 mt-1">
+      <!-- Transformation Challenge -->
+      <div class="col-md-4">
+        <div class="service-card h-100 text-center">
+          <div class="service-icon mx-auto mb-2">⚡</div>
+          <h5>Transformation Challenge</h5>
+          <p class="muted small">8–12 week structured challenge combining strength, nutrition, and discipline for full-body transformation.</p>
+        </div>
+      </div>
+
+      <!-- Yoga & Mobility -->
+      <div class="col-md-4">
+        <div class="service-card h-100 text-center">
+          <div class="service-icon mx-auto mb-2">🧘‍♂️</div>
+          <h5>Yoga & Mobility</h5>
+          <p class="muted small">Flexibility, breathing, recovery, and joint mobility sessions designed to keep your body injury-free.</p>
+        </div>
+      </div>
+
+      <!-- CrossFit & Conditioning -->
+      <div class="col-md-4">
+        <div class="service-card h-100 text-center">
+          <div class="service-icon mx-auto mb-2">🏅</div>
+          <h5>CrossFit & Conditioning</h5>
+          <p class="muted small">High-intensity functional workouts to improve endurance, explosive power, and athletic performance.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+
+
+  
+
+  
 
   <!-- GALLERY -->
   <section id="gallery">
@@ -100,13 +273,13 @@
       </div>
 
       <div class="gallery">
-        <!-- Unsplash images — replace with local /new/ files if desired -->
+        <!-- use forward slashes for local images; remote ones fine as-is -->
         <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9d742a8c5b1b3b7bb0b2b6a6f4e9db7d" alt="Weightlifting">
-        <img src="\image\barbell.jpg" alt="Kettlebell training">
-        <img src="\image\kettle.jpg" alt="Barbell">
-        <img src="\image\squat.webp" alt="Squat rack">
-        <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7e248c2fb2d3b6e6b5a9f3c7d6a1b2c3" alt="Training session">
-        <img src="\image\rowing-machine-workouts.jpg" alt="Row machine">
+        <img src="image/barbell.jpg" alt="Kettlebell training">
+        <img src="image/kettle.jpg" alt="Barbell">
+        <img src="image/squat.webp" alt="Squat rack">
+        <img src="/image/5d8e7d94-0d94-43cf-a401-0d4d51d8ff60.png" alt="Training session">
+        <img src="image/rowing-machine-workouts.jpg" alt="Row machine">
       </div>
     </div>
   </section>
@@ -146,6 +319,49 @@
       </div>
     </div>
   </section>
+    
+
+
+  <!-- trai -->
+ <section id="trainers" class="section fade-slide">
+  <h2 class="section-title">Meet Our Trainers</h2>
+
+  <div class="trainers-grid">
+
+    <div class="trainer-card fade-slide delay-1">
+      <img src="image/barbell.jpg" alt="Trainer Arjun">
+      <h3>Arjun Kumar</h3>
+      <p class="trainer-role">Strength Coach</p>
+      <p>Specialist in powerlifting, muscle growth and advanced strength mechanics.</p>
+    </div>
+
+    <div class="trainer-card fade-slide delay-2">
+      <img src="image/kettle.jpg" alt="Trainer Priya">
+      <h3>Priya Nair</h3>
+      <p class="trainer-role">Fat Loss & Nutrition Expert</p>
+      <p>Helps clients achieve sustainable fat loss with personalized diet plans.</p>
+    </div>
+
+    <div class="trainer-card fade-slide delay-3">
+      <img src="image/rowing-machine-workouts.jpg" alt="Trainer Vishnu">
+      <h3>Vishnu Das</h3>
+      <p class="trainer-role">Conditioning Coach</p>
+      <p>Improves athletic performance through speed, agility and endurance training.</p>
+    </div>
+    <div class="trainer-card fade-slide delay-3">
+      <img src="image/rowing-machine-workouts.jpg" alt="Trainer Vishnu">
+      <h3>Vishnu Das</h3>
+      <p class="trainer-role">Conditioning Coach</p>
+      <p>Improves athletic performance through speed, agility and endurance training.</p>
+    </div>
+
+  </div>
+</section>
+  
+
+
+ 
+
 
   <!-- SUBSCRIBE & JOIN -->
   <section id="join">
@@ -156,29 +372,37 @@
           <p class="muted">Fill the form and our coach will contact you to confirm your free trial session.</p>
 
           <form id="trialForm" class="row g-2">
-            <div class="col-12">
-              <input type="text" id="name" class="form-control bg-dark text-white" placeholder="Full name" required>
-            </div>
-            <div class="col-md-6">
-              <input type="email" id="email" class="form-control bg-dark text-white" placeholder="Email address" required>
-            </div>
-            <div class="col-md-6">
-              <input type="tel" id="phone" class="form-control bg-dark text-white" placeholder="Phone number" required>
-            </div>
-            <div class="col-12">
-              <select id="program" class="form-select bg-dark text-white">
-                <option value="strength">Strength Training</option>
-                <option value="conditioning">Conditioning</option>
-                <option value="personal">Personal Coaching</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <button class="btn btn-cta" type="submit">Request Trial</button>
-            </div>
-            <div class="col-12">
-              <div id="formMsg" class="muted small" style="display:none;"></div>
-            </div>
-          </form>
+  <div class="col-12">
+    <input type="text" id="name" name="from_name" class="form-control bg-dark text-white" placeholder="Full name" required>
+  </div>
+
+  <div class="col-md-6">
+    <input type="email" id="email" name="from_email" class="form-control bg-dark text-white" placeholder="Email address" required>
+  </div>
+
+  <div class="col-md-6">
+    <input type="tel" id="phone" name="from_phone" class="form-control bg-dark text-white" placeholder="Phone number" required>
+  </div>
+
+  <div class="col-12">
+    <select id="program" name="program" class="form-select bg-dark text-white">
+      <option value="Strength Training">Strength Training</option>
+      <option value="Conditioning">Conditioning</option>
+      <option value="Personal Coaching">Personal Coaching</option>
+    </select>
+  </div>
+
+  <div class="col-12">
+    <button class="btn btn-cta" type="submit">Request Trial</button>
+  </div>
+
+  <div class="col-12">
+    <div id="formMsg" class="muted small" style="display:none;"></div>
+  </div>
+</form>
+
+
+
 
         </div>
 
@@ -187,7 +411,7 @@
           <p class="muted">Get news about workshops, timings, events and promotions.</p>
 
           <form id="subscribeForm" class="d-flex gap-2">
-            <input type="email" id="subEmail" class="form-control bg-dark text-white" placeholder="Enter your email" required>
+            <input type="email" id="subEmail" class="form-control bg-dark text-white" placeholder="Enter your email" >
             <button class="btn btn-outline-light" type="submit">Subscribe</button>
           </form>
           <div id="subMsg" class="muted small mt-2" style="display:none;"></div>
@@ -201,7 +425,7 @@
   <div class="container">
     <div class="text-center mb-4">
       <h4 class="section-title">Contact</h4>
-      <p class="muted mb-3">Call / WhatsApp us at <strong>+91 98765 43210</strong> or send a message — we’ll get back within 24 hours.</p>
+      <p class="muted mb-3">Call / WhatsApp us at <strong>+91 7034300347</strong> or send a message — we’ll get back within 24 hours.</p>
     </div>
 
     <div class="row justify-content-center">
@@ -237,32 +461,82 @@
   </div>
 </section>
 
-  <footer>
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center flex-column flex-md-row">
-        <div class="mb-2 mb-md-0">
-          <strong>Fit Forge</strong> &nbsp;© <span id="year"></span>
-        </div>
-        <div class="muted small">All rights reserved · Designed by PRANAV CK</div>
+<!--  -->
+
+
+
+
+
+
+
+
+
+<!-- footer -->
+ <footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Brand -->
+    <div class="footer-col">
+      <h3 class="footer-logo">Fit <span>Forge</span></h3>
+      <p class="footer-desc">
+        Strength • Discipline • Results  
+        Your ultimate fitness partner.
+      </p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Programs</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Contact -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:fitforge@gym.com">fitforge@gym.com</a></li>
+        <li><a href="tel:+911234567890">+91 7034300347</a></li>
+        <li>Kerala, India</li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Social Media -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/fitforge_official_?igsh=MXBxc25rNGh3NmI5" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
-  </footer>
+
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Fit Forge — All Rights Reserved.
+  </div>
+</footer>
+
+
+  
 
   <!-- Floating contact -->
   <div class="floating-contact">
-    <a href="tel:+919876543210">CALL US</a>
+    <a href="tel:+917034300347">CALL US</a>
   </div>
 
   <!-- jQuery + Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- EmailJS browser SDK (CDN) -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
 
   <script src="script.js" defer></script>
-
-
-
-
 </body>
 </html>

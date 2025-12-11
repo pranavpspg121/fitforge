@@ -1,3 +1,23 @@
+ 
+ const searchInput = document.getElementById("serviceSearch");
+const serviceCards = document.querySelectorAll("#servicesList .service-card");
+
+searchInput.addEventListener("input", function() {
+    const value = this.value.toLowerCase();
+
+    serviceCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+
+        if(text.includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+
+ 
+ 
  // Insert current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -13,32 +33,113 @@
         }
       });
 
-      // Trial form handler (demo)
-      $('#trialForm').on('submit', function(e){
-        e.preventDefault();
-        var name = $('#name').val().trim();
-        var email = $('#email').val().trim();
-        var phone = $('#phone').val().trim();
-        if(!name || !email || !phone){
-          $('#formMsg').text('Please complete all fields.').css('color','#ffb4b4').show();
-          return;
-        }
-        $('#formMsg').text('Thanks ' + name + '! We will contact you shortly to confirm your trial.').css('color','#cfe9d1').show();
-        // reset form after success (simulate)
-        $(this)[0].reset();
-      });
+    
 
-      // Subscribe form (demo)
-      $('#subscribeForm').on('submit', function(e){
-        e.preventDefault();
-        var eaddr = $('#subEmail').val().trim();
-        if(!eaddr){
-          $('#subMsg').text('Enter a valid email').css('color','#ffb4b4').show();
-          return;
-        }
-        $('#subMsg').text('Subscribed! Check your inbox for updates.').css('color','#cfe9d1').show();
-        $(this)[0].reset();
-      });
+     
+// --------- CONFIG - replace these with your actual EmailJS values ----------
+const PUBLIC_KEY = "BykK_nv3t0ddUxEfe";      // from EmailJS dashboard (user_ or pk_ string)
+const SERVICE_ID = "service_3ir13ys";      // e.g. "service_3ir13ys"
+const TEMPLATE_ID = "template_wc4dwqq";    // e.g. "template_wc4dwqq"
+// -------------------------------------------------------------------------
+
+// -----------------------------------------------------------
+
+// initialize
+if (window.emailjs && emailjs.init) {
+  emailjs.init(PUBLIC_KEY);
+} else {
+  console.error("EmailJS not loaded. Make sure the CDN <script> is included BEFORE this script.");
+}
+
+const bookform = document.getElementById("trialForm");
+const bookfeedback = document.getElementById("formMsg");
+
+function setFeedback(text, success = true) {
+  if (!bookfeedback) return;
+  bookfeedback.textContent = text;
+  bookfeedback.style.display = "block";
+  bookfeedback.className = success ? 'muted small succ' : 'muted small err';
+}
+
+function nowTimeStr() {
+  return new Date().toLocaleString();
+}
+
+bookform.addEventListener('submit', function (e) {
+  e.preventDefault();
+  setFeedback('Sending...', true);
+
+  // read form values
+  const nameVal = (document.getElementById('name') || {}).value || '';
+  const emailVal = (document.getElementById('email') || {}).value || '';
+  const phoneVal = (document.getElementById('phone') || {}).value || '';
+  const programVal = (document.getElementById('program') || {}).value || '';
+
+  // Build template payload that matches YOUR template variable names exactly
+  const templateParams = {
+    from_name: nameVal,        // {{from_name}}
+    from_email: emailVal,      // {{from_email}}
+    from_phone: phoneVal,      // {{from_phone}}
+    program: programVal,       // {{program}}
+    time: nowTimeStr()         // {{time}}
+  };
+
+  console.log("DEBUG: templateParams ->", templateParams);
+
+  // send using explicit send so keys are exact (less dependent on form name attributes)
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+    .then(function (resp) {
+      console.log('EmailJS send SUCCESS', resp);
+      setFeedback('Thanks ' + (nameVal || 'there') + '! We will contact you shortly to confirm your trial.', true);
+      bookform.reset();
+      setTimeout(() => bookfeedback.style.display = 'none', 7000);
+    }, function (err) {
+      console.error('EmailJS send ERROR', err);
+      setFeedback('Send failed. Check console for details.', false);
+    });
+});
+
+
+
+
+
+
+
+
+//  subscribe us and local storage
+
+
+    document.getElementById("subscribeForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const emailInput = document.getElementById("subEmail");
+    const subMsg = document.getElementById("subMsg");
+
+    const eaddr = emailInput.value.trim();
+
+    // Validate
+    if (!eaddr) {
+        subMsg.textContent = "Enter a valid email";
+        subMsg.style.color = "#ffb4b4";
+        subMsg.style.display = "block";
+        return;
+    }
+
+    // Save to localStorage
+    localStorage.setItem("username", eaddr);
+    alert("Name saved!");
+
+    // Success message
+    subMsg.textContent = "Subscribed! Check your inbox for updates.";
+    subMsg.style.color = "#cfe9d1";
+    subMsg.style.display = "block";
+
+    // Reset form
+    this.reset();
+});
+
+
+        
 
       // Simple gallery click -> modal preview (Bootstrap modal)
       $('.gallery img').on('click', function(){
@@ -113,7 +214,7 @@
 
   // Initialize EmailJS with your public key (replace placeholder)
   // emailjs.init('BykK_nv3t0ddUxEfe'); // <-- replace
-  emailjs.init('YOUR_EMAILJS_PUBLIC_KEY_HERE');
+  emailjs.init('BykK_nv3t0ddUxEfe');
 
 
   $(function(){
@@ -161,3 +262,71 @@
         });
     });
   });
+  // auto year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Fade-slide reveal
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll('.fade-slide').forEach(el=>{
+  observer.observe(el);
+});
+
+
+// about js
+document.addEventListener('DOMContentLoaded', () => {
+  // animate progress bars when visible
+  const bars = document.querySelectorAll('.bar');
+
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const bar = entry.target;
+        const target = parseInt(bar.getAttribute('data-value'), 10) || 0;
+        const fill = bar.querySelector('.bar-fill');
+        // animate width
+        fill.style.width = target + '%';
+
+        // animate number (tiny count up)
+        const pctEl = bar.previousElementSibling.querySelector('.percent');
+        if (pctEl) {
+          let cur = 0;
+          const step = Math.max(1, Math.floor(target / 30));
+          const tick = () => {
+            cur += step;
+            if (cur >= target) {
+              pctEl.textContent = target + '%';
+            } else {
+              pctEl.textContent = cur + '%';
+              requestAnimationFrame(tick);
+            }
+          };
+          requestAnimationFrame(tick);
+        }
+        observer.unobserve(bar);
+      });
+    }, {threshold:0.25});
+
+    bars.forEach(b => obs.observe(b));
+  } else {
+    // fallback: instantly show
+    bars.forEach(b => {
+      const t = b.getAttribute('data-value') || 0;
+      b.querySelector('.bar-fill').style.width = t + '%';
+    });
+  }
+});
+
+// json
+fetch("gym-data.json")
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log("Error:", error));

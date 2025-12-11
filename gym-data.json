@@ -1,0 +1,145 @@
+{
+  "gymInfo": {
+    "name": "Fit Forge",
+    "tagline": "Strength • Discipline • Results",
+    "location": "Kerala, India",
+    "email": "info@fitforge.com",
+    "phone": "+91 98765 43210"
+  },
+
+  "services": [
+    {
+      "id": "s1",
+      "title": "Strength Training",
+      "category": "strength",
+      "duration": "12 Weeks",
+      "rating": 4.9,
+      "description": "Build muscle, learn form correction and improve overall power using structured barbell programs."
+    },
+    {
+      "id": "s2",
+      "title": "Fat Loss Program",
+      "category": "cardio",
+      "duration": "8 Weeks",
+      "rating": 4.7,
+      "description": "HIIT, functional conditioning and guided nutrition to help you burn fat safely and effectively."
+    },
+    {
+      "id": "s3",
+      "title": "Personal Coaching",
+      "category": "personal",
+      "duration": "Custom",
+      "rating": 5.0,
+      "description": "One-on-one coaching sessions with certified trainers focusing on your individual goals."
+    },
+    {
+      "id": "s4",
+      "title": "CrossFit / HIIT",
+      "category": "crossfit",
+      "duration": "6 Weeks",
+      "rating": 4.8,
+      "description": "Intense high-energy workouts combining functional training, speed and endurance."
+    },
+    {
+      "id": "s5",
+      "title": "Yoga & Mobility",
+      "category": "yoga",
+      "duration": "6 Weeks",
+      "rating": 4.6,
+      "description": "Improve flexibility, posture, breathing and recovery with guided yoga sessions."
+    },
+    {
+      "id": "s6",
+      "title": "Transformation Challenge",
+      "category": "transformation",
+      "duration": "12 Weeks",
+      "rating": 5.0,
+      "description": "Complete body transformation plans including diet, workouts and weekly checkups."
+    }
+  ],
+
+  "trainers": [
+    {
+      "id": "t1",
+      "name": "Arjun Kumar",
+      "role": "Strength Coach",
+      "experience": "6 Years",
+      "image": "image/barbell.jpg",
+      "specialization": "Barbell strength, hypertrophy, form correction",
+      "rating": 4.9
+    },
+    {
+      "id": "t2",
+      "name": "Priya Nair",
+      "role": "Nutrition & Fat Loss Coach",
+      "experience": "5 Years",
+      "image": "image/kettle.jpg",
+      "specialization": "Nutrition planning, fat loss coaching, women's fitness",
+      "rating": 4.8
+    },
+    {
+      "id": "t3",
+      "name": "Vishnu Das",
+      "role": "Conditioning Coach",
+      "experience": "7 Years",
+      "image": "image/rowing-machine-workouts.jpg",
+      "specialization": "HIIT, sports conditioning, agility training",
+      "rating": 5.0
+    }
+  ],
+
+  "gallery": [
+    { "id": "g1", "image": "image/squat.webp", "title": "Squat Rack Training" },
+    { "id": "g2", "image": "image/barbell.jpg", "title": "Strength Training Zone" },
+    { "id": "g3", "image": "image/kettle.jpg", "title": "Kettlebell Workouts" },
+    { "id": "g4", "image": "image/rowing-machine-workouts.jpg", "title": "Cardio & Endurance" }
+  ],
+
+  "reviews": [
+    {
+      "id": "r1",
+      "name": "Arjun M",
+      "rating": 5,
+      "comment": "Best gym experience ever! The trainers are supportive and the programs are well structured.",
+      "program": "Strength Training"
+    },
+    {
+      "id": "r2",
+      "name": "Neethu R",
+      "rating": 5,
+      "comment": "Lost 12kg in 10 weeks safely. Fit Forge changed my life!",
+      "program": "Fat Loss Program"
+    },
+    {
+      "id": "r3",
+      "name": "Vishal P",
+      "rating": 4.8,
+      "comment": "Clean space, modern equipment and very motivating trainers.",
+      "program": "HIIT"
+    }
+  ],
+
+  "membershipPlans": [
+    {
+      "id": "m1",
+      "name": "Basic Plan",
+      "price": 999,
+      "duration": "Monthly",
+      "features": ["Gym Access", "Cardio Zone", "Locker Access"]
+    },
+    {
+      "id": "m2",
+      "name": "Standard Plan",
+      "price": 1499,
+      "duration": "Monthly",
+      "features": ["Gym Access", "Trainer Assistance", "Cardio + Strength Zones"]
+    },
+    {
+      "id": "m3",
+      "name": "Premium Plan",
+      "price": 2499,
+      "duration": "Monthly",
+      "features": ["1-on-1 Coaching", "Diet Support", "Progress Tracking"]
+    }
+  ]
+}
